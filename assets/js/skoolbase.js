@@ -72,7 +72,7 @@ $(document).ready(function () {
                     "to": [{ "email": $form.find('[name="email"]').val() }],
                     "bcc_address": "admin@skoolbase.com",
                     "subject": "Thank you",
-                    "text": "Thank you for showing interest in Skoolbase. We will get back to as soon as possible."
+                    "text": "Thank you for showing interest in Skoolbase. We will get back to as soon as possible.\r\n Your message:\r\n" + $form.find('[name="message"]').val()
                 }
             };
             mApi.messages.send(params, function (res) {
