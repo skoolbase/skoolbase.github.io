@@ -6,6 +6,10 @@ body {
     font-size: 16px;
 }
 
+.error {
+    color:red;    
+}
+
 .navbar-brand {
     font-family: "Raleway", 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 28px;

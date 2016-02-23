@@ -126,25 +126,25 @@
             </div>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2 col-sm-5 col-sm-offset-4">
-                    <form id="contactForm" name="sendMessage" class="form-horizontal" novalidate>
+                    <form id="contactForm" class="form-horizontal">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name:</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" placeholder="Name" name="name" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email address:</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="email" class="form-control" placeholder="Email Address" name="email" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Questions?</label>
-                                <textarea rows="5" class="form-control" placeholder="Questions" id="message"></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Questions" name="message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -171,6 +171,7 @@
     <!-- Javascripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="assets/js/skoolbase.js"></script>
     

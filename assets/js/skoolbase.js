@@ -43,4 +43,29 @@ $(document).ready(function () {
     }
     initAPEffects('.jumbotron');
 
+    $("#contactForm").validate({
+        rules: {
+            name: "required",
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Please enter your name",
+            email: "Please enter a valid email address"
+        },
+        submitHandler: function(e) {
+            var $form = $("#contactForm");
+            window.intercomSettings = {
+                app_id: 'ci0vxbk6',
+                name: $form.find('[name="name"]').val(),
+                email: $form.find('[name="email"]').val(),
+                message: $form.find('[name="message"]').val(),
+                created_at: Date.now()
+            };
+                        
+            $('#success').text("Thanks for your interest. We'll get back to you soon.");
+        }
+    });
 });
