@@ -17,7 +17,7 @@ $(document).ready(function () {
         }
     });
     
-    var w = window;
+    /*var w = window;
     var ic = w.Intercom;
     if (typeof ic === "function") {
         ic('reattach_activator');
@@ -46,7 +46,7 @@ $(document).ready(function () {
         } else {
             w.addEventListener('load', l, false);
         }
-    }
+    }*/
     
     $("#contactForm").validate({
         rules: {
@@ -62,7 +62,25 @@ $(document).ready(function () {
         },
         submitHandler: function(e) {
             var $form = $("#contactForm");
-            window.intercomSettings = {
+            // create a new instance of the Mandrill class with your API key
+            var mApi = new mandrill.Mandrill('vfejgu7ElMYo4ro8OD2jwQ');
+            // create a variable for the Mandril API call parameters
+            var params = {
+                "message": {
+                    "from_name" : "Skoolbase",
+                    "from_email": "noreply@skoolbase.com",
+                    "to": [{ "email": $form.find('[name="email"]').val() }],
+                    "bcc_address": "admin@skoolbase.com",
+                    "subject": "Thank you",
+                    "text": "Thank you for showing interest in Skoolbase. We will get back to as soon as possible."
+                }
+            };
+            mApi.messages.send(params, function (res) {
+                $('#success').removeClass('hide');
+            }, function (err) {
+            });
+        
+            /*window.intercomSettings = {
                 app_id: 'ci0vxbk6',
                 name: $form.find('[name="name"]').val(),
                 email: $form.find('[name="email"]').val(),
@@ -70,7 +88,7 @@ $(document).ready(function () {
                 created_at: Date.now()
             };
                         
-            $('#success').text("Thanks for your interest. We'll get back to you soon.");
+            $('#success').text("Thanks for your interest. We'll get back to you soon.");*/
         }
     });
     
