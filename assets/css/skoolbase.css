@@ -18,6 +18,10 @@ body {
     background: #ffffff;
 }
 
+#navbar.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);   
+}
+
 .jumbotron {
     background: #ffffff;   
 }
@@ -25,6 +29,11 @@ body {
 .jumbotron h1 {
     font-weight: 300;
     color: #555;   
+}
+
+.tagline {
+    padding: 35px 0;
+    background: #eee;    
 }
 
 .tagline h2 {
@@ -41,13 +50,14 @@ body {
     padding: 75px 0;    
 }
 
-.feature {
-    padding-top: 55px;
-}
-
-.feature h2 {
+.contact h2,
+.features h2 {
     font-weight: 300;
     color: #333;
+}
+
+.feature {
+    padding-top: 55px;
 }
 
 .feature p {
@@ -57,21 +67,39 @@ body {
 
 .feature i {
     font-size: 78px;
+    color: #777;
+}
+
+.footer {
+    margin-top:50px;
+    padding: 15px;
+    color: #999;    
 }
 
 @media all and (min-width: 768px) {
+    #navbar {
+        min-height: 75px !important;
+    }
     .navbar-brand {
         min-height: 75px !important;
         padding: 35px 0;
     }
-    .navbar-default {
-        min-height: 75px !important;
-    }
-    .navbar-default .navbar-collapse > .navbar-nav > li > a {
+    #navbar .navbar-collapse > .navbar-nav > li > a {
         padding: 35px 15px;
     }
+    #navbar.active {
+        min-height: 50px !important;
+    }
+    #navbar.active .navbar-brand {
+        min-height: 50px !important;
+        padding: 15px 0;
+        font-size: 22px;
+    }
+    #navbar.active .navbar-collapse > .navbar-nav > li > a {
+        padding: 15px 15px;
+    }
     .jumbotron {
-        padding: 88px 0;
+        padding: 88px 0 68px 0;
     }
     .jumbotron p {
         padding: 20px 0;
