@@ -62,7 +62,7 @@ $(document).ready(function () {
                 name: $form.find('[name="name"]').val(),
                 email: $form.find('[name="email"]').val(),
                 message: $form.find('[name="message"]').val(),
-                created_at: Date.now()
+                //created_at: Date.now()
             };
                         
             $('#success').text("Thanks for your interest. We'll get back to you soon.");
