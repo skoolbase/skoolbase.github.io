@@ -17,33 +17,7 @@ $(document).ready(function () {
         }
     });
     
-    function initAPEffects(e) {
-        var animationDelay = 2500;
-        hideWord($(e).find('.menu-item.show'));
-
-        function hideWord($word) {
-            var nextWord = takeNext($word);
-            switchWord($word, nextWord);
-            setTimeout(function () {
-                hideWord(nextWord);
-            }, animationDelay);
-        }
-
-        function takeNext($word) {
-            return (!$word.is(':last-child')) ? $word.next() : $word.parent()
-                .children().eq(0);
-        }
-
-        function switchWord($oldWord, $newWord) {
-            $oldWord.fadeOut("slow", function() {
-                $oldWord.removeClass('show').addClass('hide');
-                $newWord.removeClass('hide').addClass('show');
-            });
-        }
-    }
-    initAPEffects('.jumbotron');
-
-    /*var w = window;
+    var w = window;
     var ic = w.Intercom;
     if (typeof ic === "function") {
         ic('reattach_activator');
@@ -72,7 +46,7 @@ $(document).ready(function () {
         } else {
             w.addEventListener('load', l, false);
         }
-    }*/
+    }
     
     $("#contactForm").validate({
         rules: {
@@ -99,4 +73,30 @@ $(document).ready(function () {
             $('#success').text("Thanks for your interest. We'll get back to you soon.");
         }
     });
+    
+    function initAPEffects(e) {
+        var animationDelay = 2500;
+        hideWord($(e).find('.menu-item.show'));
+
+        function hideWord($word) {
+            var nextWord = takeNext($word);
+            switchWord($word, nextWord);
+            setTimeout(function () {
+                hideWord(nextWord);
+            }, animationDelay);
+        }
+
+        function takeNext($word) {
+            return (!$word.is(':last-child')) ? $word.next() : $word.parent()
+                .children().eq(0);
+        }
+
+        function switchWord($oldWord, $newWord) {
+            $oldWord.fadeOut("slow", function() {
+                $oldWord.removeClass('show').addClass('hide');
+                $newWord.removeClass('hide').addClass('show');
+            });
+        }
+    }
+    initAPEffects('.jumbotron');
 });
