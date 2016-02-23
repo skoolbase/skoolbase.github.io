@@ -43,7 +43,7 @@ $(document).ready(function () {
     }
     initAPEffects('.jumbotron');
 
-    var w = window;
+    /*var w = window;
     var ic = w.Intercom;
     if (typeof ic === "function") {
         ic('reattach_activator');
@@ -72,7 +72,7 @@ $(document).ready(function () {
         } else {
             w.addEventListener('load', l, false);
         }
-    }
+    }*/
     
     $("#contactForm").validate({
         rules: {
